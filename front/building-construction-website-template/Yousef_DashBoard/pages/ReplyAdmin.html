@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from dashui.codescandy.com/dashuipro/pages/ecommerce-product-edit.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2024 16:45:52 GMT -->
+<head>
+  <!-- Required meta tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="author" content="Codescandy" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-M8S4MT3EYG');
+
+	
+</script>
+<style>
+              .section {
+display: none;
+}
+
+.section.active {
+display: block;
+}
+
+
+
+
+/* Premium Form Container */
+.form-container {
+	background: rgba(255, 255, 255, 0.98);
+	border-radius: 30px;
+	padding: 50px 40px;
+	box-shadow: 
+	    0 20px 40px rgba(0, 0, 0, 0.08),
+	    0 10px 20px rgba(0, 0, 0, 0.05),
+	    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+	width: 100%;
+	max-width: 600px;
+	margin: 40px auto;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .form-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 6px;
+	background: linear-gradient(90deg, #3498db, #2ecc71, #3498db);
+	background-size: 200% 100%;
+	animation: gradientMove 5s ease infinite;
+              }
+              
+              @keyframes gradientMove {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+       }
+
+          .form-container:hover {
+	transform: translateY(-5px);
+	box-shadow: 
+	    0 30px 60px rgba(0, 0, 0, 0.12),
+	    0 15px 30px rgba(0, 0, 0, 0.08),
+	    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+          }
+          
+          /* Form Title */
+          .form-title {
+	color: #1a1a1a;
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 40px;
+	text-align: center;
+	position: relative;
+	letter-spacing: -0.5px;
+          }
+          
+          .form-title::after {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50px;
+	height: 4px;
+	background: linear-gradient(90deg, #3498db, #2ecc71);
+	border-radius: 10px;
+          }
+          
+          /* Input Groups */
+          .input-group {
+	position: relative;
+	margin-bottom: 30px;
+	text-align: left; /* Ensure container is left-aligned */
+          }
+          
+          /* Form Labels - Modified for left alignment */
+          .form-label {
+	color: #2c3e50;
+	font-weight: 600;
+	font-size: 0.95rem;
+	margin-bottom: 8px;
+	display: block;
+	text-align: left;
+	padding-left: 5px; /* Slight padding to align with input padding */
+	transition: transform 0.3s ease, color 0.3s ease;
+	transform-origin: left center;
+          }
+          
+          /* Input Fields */
+          .form-control {
+	width: 100%;
+	padding: 15px 20px;
+	border: 2px solid #e9ecef;
+	border-radius: 15px;
+	background: #f8f9fa;
+	font-size: 1rem;
+	color: #2c3e50;
+	transition: all 0.3s ease;
+	text-align: left;
+          }
+          
+          .form-control:focus {
+	border-color: #3498db;
+	background: #fff;
+	box-shadow: 
+	    0 5px 15px rgba(52, 152, 219, 0.1),
+	    0 0 0 4px rgba(52, 152, 219, 0.1);
+	outline: none;
+          }
+          
+          .form-control::placeholder {
+	color: #95a5a6;
+	font-weight: 400;
+	text-align: left;
+          }
+          
+          /* Textarea Specific */
+          textarea.form-control {
+	min-height: 140px;
+	resize: vertical;
+	line-height: 1.6;
+          }
+          
+          /* Submit Button */
+          .submit-btn {
+	width: 100%;
+	padding: 16px 30px;
+	background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+	border: none;
+	border-radius: 15px;
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+          }
+          
+          .submit-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+	    120deg,
+	    transparent,
+	    rgba(255, 255, 255, 0.3),
+	    transparent
+	);
+	transition: 0.5s;
+          }
+          
+          .submit-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 
+	    0 10px 20px rgba(46, 204, 113, 0.2),
+	    0 6px 10px rgba(52, 152, 219, 0.2);
+          }
+          
+          .submit-btn:hover::before {
+	left: 100%;
+          }
+          
+          .submit-btn:active {
+	transform: translateY(0);
+          }
+          
+          /* Focus Animation for Labels */
+          .input-group:focus-within .form-label {
+	color: #3498db;
+	transform: translateX(2px); /* Slight shift instead of scaling */
+          }
+          
+          /* Entrance Animations */
+          @keyframes slideUpFade {
+	from {
+	    opacity: 0;
+	    transform: translateY(30px);
+	}
+	to {
+	    opacity: 1;
+	    transform: translateY(0);
+	}
+          }
+          
+          .input-group {
+	animation: slideUpFade 0.6s ease forwards;
+	opacity: 0;
+          }
+          
+          .input-group:nth-child(1) { animation-delay: 0.2s; }
+          .input-group:nth-child(2) { animation-delay: 0.3s; }
+          .input-group:nth-child(3) { animation-delay: 0.4s; }
+          
+          /* Responsive Adjustments */
+          @media (max-width: 768px) {
+	.form-container {
+	    padding: 40px 25px;
+	    margin: 20px;
+	    border-radius: 20px;
+	}
+          
+	.form-title {
+	    font-size: 1.8rem;
+	}
+          
+	.form-label {
+	    font-size: 0.9rem;
+	}
+          
+	.submit-btn {
+	    padding: 14px 25px;
+	}
+          }
+
+</style>
+<!-- Favicon icon-->
+<link rel="shortcut icon" type="image/x-icon" href="https://dashui.codescandy.com/dashuipro/assets/images/favicon/favicon.ico" />
+
+<!-- Color modes -->
+<script src="../assets/js/vendors/color-modes.js"></script>
+
+<!-- Libs CSS -->
+<link href="../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+<link href="../assets/libs/%40mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+<link href="../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="../assets/css/theme.min.css">
+
+      <link href="../assets/libs/dropzone/dist/dropzone.css" rel="stylesheet" >
+  <link href="../assets/libs/%40yaireo/tagify/dist/tagify.css" rel="stylesheet">
+
+
+    <title> Send Reply | AL - QUDS</title>
+</head>
+
+<body> <div class="header">
+
+
+    <main id="main-wrapper" class="main-wrapper">
+      <div class="header">
+			<!--Navbar nav -->
+			<ul class="navbar-nav navbar-right-wrap ms-lg-auto d-flex nav-top-wrap align-items-center ms-4 ms-lg-0">
+				<li>
+					<div class="dropdown">
+						<button class="btn btn-ghost btn-icon rounded-circle" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+							<i class="bi theme-icon-active"></i>
+							<span class="visually-hidden bs-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
+							<li>
+								<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+									<i class="bi theme-icon bi-sun-fill"></i>
+									<span class="ms-2">Light</span>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+									<i class="bi theme-icon bi-moon-stars-fill"></i>
+									<span class="ms-2">Dark</span>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+									<i class="bi theme-icon bi-circle-half"></i>
+									<span class="ms-2">Auto</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="dropdown stopevent ms-2">
+					
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="dropdownNotification">
+						<div>
+							<div class="border-bottom px-3 pt-2 pb-3 d-flex justify-content-between align-items-center">
+								<p class="mb-0 text-dark fw-medium fs-4">Notifications</p>
+								<a href="#!" class="text-muted">
+									<span>
+										<i class="me-1 icon-xs" data-feather="settings"></i>
+									</span>
+								</a>
+							</div>
+							<div data-simplebar style="height: 250px">
+								<!-- List group -->
+								<ul class="list-group list-group-flush notification-list-scroll">
+									<!-- List group item -->
+									<li class="list-group-item bg-light">
+										<a href="#!" class="text-muted">
+											<h5 class="mb-1">Rishi Chopra</h5>
+											<p class="mb-0">Mauris blandit erat id nunc blandit, ac eleifend dolor pretium.</p>
+										</a>
+									</li>
+									<!-- List group item -->
+									<li class="list-group-item">
+										<a href="#!" class="text-muted">
+											<h5 class="mb-1">Neha Kannned</h5>
+											<p class="mb-0">Proin at elit vel est condimentum elementum id in ante. Maecenas et sapien metus.</p>
+										</a>
+									</li>
+									<!-- List group item -->
+									<li class="list-group-item">
+										<a href="#!" class="text-muted">
+											<h5 class="mb-1">Nirmala Chauhan</h5>
+											<p class="mb-0">Morbi maximus urna lobortis elit sollicitudin sollicitudieget elit vel pretium.</p>
+										</a>
+									</li>
+									<!-- List group item -->
+									<li class="list-group-item">
+										<a href="#!" class="text-muted">
+											<h5 class="mb-1">Sina Ray</h5>
+											<p class="mb-0">Sed aliquam augue sit amet mauris volutpat hendrerit sed nunc eu diam.</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="border-top px-3 py-2 text-center">
+								<a href="#!" class="text-inherit">View all Notifications</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- List -->
+				<li class="dropdown ms-2">
+					<a class="rounded-circle" href="#!" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div class="avatar avatar-md avatar-indicators avatar-online">
+							<img id="img" alt="avatar" src="../assets/images/avatar/avatar-11.jpg" class="rounded-circle" />
+						</div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+						<div class="px-4 pb-0 pt-2">
+							<div class="lh-1">
+								<h5 class="mb-1">John E. Grainger</h5>
+								<a href="#!" class="text-inherit fs-6">View my profile</a>
+							</div>
+							<div class="dropdown-divider mt-3 mb-2"></div>
+						</div>
+
+						<ul class="list-unstyled">
+							<li>
+								<a class="dropdown-item d-flex align-items-center" href="#!">
+									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="user"></i>
+									Edit Profile
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#!">
+									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="activity"></i>
+									Activity Log
+								</a>
+							</li>
+
+							<li>
+								<a class="dropdown-item d-flex align-items-center" href="#!">
+									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="settings"></i>
+									Settings
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="https://dashui.codescandy.com/dashuipro/index.html">
+									<i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>
+									Sign Out
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+       <!-- navbar vertical  -->
+       <!-- Sidebar -->
+<div class="navbar-vertical navbar nav-dashboard">
+	<div class="h-100" data-simplebar>
+		<!-- Brand logo -->
+		<a class="navbar-brand" href="../../index.html">
+			<img src="../../logo/quds.png" style="width: 70px; height: 70px;" />
+		</a>
+		<!-- Navbar nav -->
+		<ul class="navbar-nav flex-column" id="sideNavbar">
+			<!-- Nav item -->
+			<li class="nav-item">
+				<div style="color: #ffc107 !important; margin-left: 25px;">AL - QUDS</div>
+			</li><br><br>
+			<!-- Nav item -->
+			<!-- <li class="nav-item">
+				<a class="nav-link has-arrow " href="chat-app.html">
+					<i data-feather="message-square" class="nav-icon me-2 icon-xxs"></i>
+					Chat
+				</a>
+			</li> -->
+			<!-- Nav item -->
+			<li class="nav-item">
+				<a
+					class="nav-link has-arrow  collapsed "
+					href="#!"
+					data-bs-toggle="collapse"
+					data-bs-target="#navecommerce"
+					aria-expanded="false"
+					aria-controls="navecommerce"
+				>
+					<i data-feather="shopping-cart" class="nav-icon me-2 icon-xxs"></i>
+					Ecommerce
+				</a>
+
+				<div id="navecommerce" class="collapse " data-bs-parent="#sideNavbar">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link has-arrow " href="ecommerce-product-edit.html">Product</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-arrow " href="ecommerce-category-edit.html">Category</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-arrow " href="ecommerce-Voucher.html">Voucher</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link has-arrow " href="ecommerce-customer.html">Customer</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<!-- Nav item -->
+			<li class="nav-item">
+				<a class="nav-link has-arrow  collapsed " href="#!" data-bs-toggle="collapse" data-bs-target="#navEmail" aria-expanded="false" aria-controls="navEmail">
+					<i data-feather="mail" class="nav-icon me-2 icon-xxs"></i>
+					Contact
+				</a>
+
+				<div id="navEmail" class="collapse " data-bs-parent="#sideNavbar">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link has-arrow " href="mail.html">Inbox</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a class="nav-link has-arrow " href="ecommerce-comment-edit.html">Comments</a>
+						</li> -->
+					</ul>
+				</div>
+			</li>
+
+	</div>
+</div>
+        <!-- Page Content -->
+<div class="form-container">
+	<br><br><br>
+
+    <h2 class="form-title">Reply Message</h2>
+
+
+    <form id="Reply-form">
+	<div class="input-group">
+	    <label for="email" class="form-label">Email</label>
+	    <input type="text" class="form-control" id="email" name="email" disabled>
+	</div>
+          
+	<div class="input-group">
+	    <label for="subject" class="form-label">Subject</label>
+	    <input type="text" class="form-control" id="subject" name="subject" disabled>
+	</div>
+          
+	<div class="input-group">
+	    <label for="textArea" class="form-label">Reply Message</label>
+	    <textarea class="form-control" id="textArea" rows="4" placeholder="Write your message here..."></textarea>
+	</div>
+          
+	<button type="submit" class="submit-btn">Send Message</button>
+          </form>
+          
+          
+
+    <!-- <form id="Reply-form">
+	<div class="input-group">
+            <label for="input1" class="form-label">Email</label>
+            <input type="text" class="form-control" id="name" name="email" disabled >
+        </div>
+	
+	<div class="input-group">
+	    <label for="subject" class="form-label">Subject</label>
+	    <input type="text" class="form-control" id="subject" name="subject" disabled>
+	</div>
+	
+	<div class="input-group">
+	    <label for="replyMessage" class="form-label">Reply Message</label>
+	    <textarea class="form-control" id="replyMessage" name="replyMessage" rows="4" placeholder="Write your message here..."></textarea>
+	</div>
+	
+	<button type="submit" class="submit-btn">Send Message</button>
+          </form> -->
+
+
+
+</div>
+
+        <!-- <div class="form-container">
+            <h2>Contact Us</h2>
+            <form action="your-server-endpoint" method="post">
+              <div class="form-group">
+                <label for="name">Email</label>
+                <input type="text" id="name" name="email" disabled>
+              </div>
+              <div class="form-group">
+                <label for="email">subject</label>
+                <input type="email" id="email" name="subject" disabled >
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="adminResponse" ></textarea>
+              </div>
+              <button type="submit" onclick="SendMassege()" class="submit-btn" >Submit</button>
+            </form>
+          </div> -->
+        <!-- Scripts -->
+
+        <!-- dropzone -->
+  <script src="../assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+  <!-- flatpickr -->
+  <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
+
+  <!-- quill js -->
+  <script src="../assets/libs/quill/dist/quill.min.js"></script>
+  <script src="../assets/libs/%40yaireo/tagify/dist/tagify.min.js"></script>
+        <!-- Libs JS -->
+
+<script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/feather-icons/dist/feather.min.js"></script>
+<script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+<!-- Theme JS -->
+<script src="../assets/js/theme.min.js"></script>
+<script>
+
+	// In ReplyAdmin.html, add this script:
+async function loadContactDetails() {
+    // Get the contactId from localStorage
+    const contactId = localStorage.getItem('selectedContactId');
+    
+    if (!contactId) {
+        alert('No contact selected');
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://localhost:44350/api/Contact/GetMessage/${contactId}`);
+        const data = await response.json();
+
+        // Fill the form with the contact data
+        document.getElementById('email').value = data.email;
+        document.getElementById('subject').value = data.subject;
+    } catch (error) {
+        console.error('Error loading contact details:', error);
+        alert('Error loading contact details');
+    }
+}
+
+// Handle form submission
+/* document.getElementById('Reply-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const replyMessage = document.getElementById('textArea').value;
+    const contactId = localStorage.getItem('selectedContactId');
+    
+    if (!replyMessage.trim()) {
+        alert('Please enter a reply message');
+        return;
+    }
+
+   
+    
+    try {
+        const response = await fetch('https://localhost:44350/api/Contact/PostMessageToEmail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contactId: contactId,
+                replyMessage: replyMessage
+            })
+        });
+        
+        if (response.ok) {
+            alert('Reply sent successfully');
+            window.location.href = 'previous-page.html';
+        }
+    } catch (error) {
+        console.error('Error sending reply:', error);
+        alert('Error sending reply');
+    }
+    
+});*/
+
+/*
+document.getElementById("Reply-form").addEventListener("submit", async (event) => {
+	event.preventDefault(); // منع إعادة تحميل الصفحة عند الإرسال
+          
+	// الحصول على القيم من الحقول
+	const email = document.getElementById("email").value;
+	const subject = document.getElementById("subject").value;
+	const replyMessage = document.getElementById("replyMessage").value;
+          
+	// التأكد من تعبئة الحقول
+	if (!replyMessage.trim()) {
+	    alert("Please write a reply message.");
+	    return;
+	}
+          debugger
+	// إنشاء FormData
+	const formData = new FormData();
+	formData.append("Email", email);
+	formData.append("Eubject", subject);
+	formData.append("AdminResponse", replyMessage);
+          console.log(formData);
+	try {
+	    const response = await fetch("https://localhost:44350/api/Contact/PostMessageToEmail", {
+	        method: "POST",
+	        body: formData,
+	    });
+          
+	    if (response.ok) {
+	        alert("Reply sent successfully");
+	        window.location.href = "previous-page.html"; // إعادة التوجيه
+	    } else {
+	        const errorData = await response.json();
+	        console.error("Error response:", errorData);
+	        alert(`Error: ${errorData.Message || "Failed to send the reply"}`);
+	    }
+	} catch (error) {
+	    console.error("Error sending reply:", error);
+	    alert("Error sending reply");
+	}
+          });*/
+
+          
+          document.getElementById("Reply-form").addEventListener("submit", async (event) => {
+	event.preventDefault();
+          
+	// التحقق من وجود الحقول
+	const emailElement = document.getElementById("email");
+	const subjectElement = document.getElementById("subject");
+	const textAreaElement = document.getElementById("textArea");
+          
+	if (!emailElement || !subjectElement || !textAreaElement) {
+	    console.error("One or more form elements are missing.");
+	    alert("Form elements are not properly set up.");
+	    return;
+	}
+          
+	// قراءة القيم
+	const email = emailElement.value;
+	const subject = subjectElement.value;
+	const replyMessage = textAreaElement.value;
+          
+	// التحقق من إدخال البيانات المطلوبة
+	if (!replyMessage.trim()) {
+	    alert("Please write a reply message.");
+	    return;
+	}
+          
+	// إنشاء FormData
+	const formData = new FormData();
+	formData.append("ContactId", "123"); // تأكد من استبدالها بالقيمة الصحيحة
+	formData.append("AdminResponse", replyMessage);
+	formData.append("Name", "Admin"); // يمكن تعديل الاسم حسب الحاجة
+	formData.append("Email", email);
+	formData.append("Subject", subject);
+	formData.append("Message", "Original message content"); // محتوى الرسالة الأصلية
+          
+	try {
+	    const response = await fetch("https://localhost:44350/api/Contact/PostMessageToEmail", {
+	        method: "POST",
+	        body: formData,
+	    });
+          
+	    if (response.ok) {
+	        alert("Reply sent successfully");
+	        window.location.href = "previous-page.html";
+	    } else {
+	        const errorData = await response.json();
+	        console.error("Error response:", errorData);
+	        alert(`Error: ${errorData.title || "Failed to send the reply"}`);
+	    }
+	} catch (error) {
+	    console.error("Error sending reply:", error);
+	    alert("Error sending reply");
+	}
+          });
+          
+
+
+
+
+
+          
+// Load contact details when the reply page loads
+document.addEventListener('DOMContentLoaded', loadContactDetails);
+</script>
+
+</body>
+
+</html>
